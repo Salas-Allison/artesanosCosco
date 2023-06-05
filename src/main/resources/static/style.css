@@ -77,8 +77,8 @@ header {
     color: var(--bg-color);
 }
 .login:hover{
-    background: hsl(24, 98%,);
-
+    background: hsl(24, 98%, 58%);
+    transition: 0.3s;
 }
 /*Home*/
 
@@ -157,9 +157,26 @@ header {
     color:#0f0f0f;
 }
 .blog-text a:hover{
-    color:yellow;
+    color:#fd8f44;
     transition: all ease 0.3s;
 }
+.footer-distributed{
+    position: fixed;
+    bottom: 0;
+}
+.footer-distributed{
+    background-color: #172317;
+    box-sizing: border-box;
+    text-align: left;
+    paddinng: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+.footer-distributed . footer-centre{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
 @media(max-width: 1250px){
     .blog-box{
         width: 300px;

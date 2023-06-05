@@ -1,7 +1,9 @@
 package com.artesanoscosco.blog;
 
 import com.artesanoscosco.blog.dao.ProduitRepository;
+import com.artesanoscosco.blog.dao.UtilisateurRepository;
 import com.artesanoscosco.blog.entity.Produit;
+import com.artesanoscosco.blog.entity.Utilisateur;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
@@ -17,12 +19,17 @@ import java.util.List;
 @Component
 public class DataLoader implements ApplicationRunner
 {
-    private final ProduitRepository mproduitRepository;
+    private ProduitRepository mproduitRepository;
+    private UtilisateurRepository mutilisateurRepository;
 
     @Autowired
     public DataLoader(ProduitRepository pproduitRepository)
     {
         this.mproduitRepository = pproduitRepository;
+    }
+    public DataLoader(UtilisateurRepository putilisateurRepository)
+    {
+        this.mutilisateurRepository = putilisateurRepository;
     }
 
     @Override
@@ -30,13 +37,21 @@ public class DataLoader implements ApplicationRunner
     {
         if (mproduitRepository.count() == 0)
         {
-            ClassPathResource resource = new ClassPathResource("static/json/artesanos.json");
+            ClassPathResource resource = new ClassPathResource("static/json/produits.json");
             ObjectMapper objectMapper = JsonMapper.builder().addModule(new JavaTimeModule()).build();
             List<Produit> produits = objectMapper.readValue(resource.getInputStream(), new TypeReference<>()
             {
             });
             mproduitRepository.saveAll(produits);
         }
+        if (mutilisateurRepository.count() == 0)
+        {
+            ClassPathResource resource = new ClassPathResource("static/json/utilisateur.json");
+            ObjectMapper objectMapper = JsonMapper.builder().addModule(new JavaTimeModule()).build();
+            List<Utilisateur> utilisateurs = objectMapper.readValue(resource.getInputStream(), new TypeReference<>()
+            {
+            });
+            mutilisateurRepository.saveAll(utilisateurs);
+        }
     }
-
 }
