@@ -1,14 +1,13 @@
 package com.artesanoscosco.blog.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
-public class Administrateur {
+@Table(name="utilisateurs")
+public class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     @Column(nullable = false)
     private String nom;
     private String prenom;
@@ -16,16 +15,17 @@ public class Administrateur {
     private String username;
     private String mot_passe;
 
-    public Administrateur(Long id, String nom, String prenom, String email, String username, String mot_passe) {
+    public Utilisateur(){
+
+    }
+
+    public Utilisateur(Long id, String nom, String prenom, String email, String username, String mot_passe) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.username = username;
         this.mot_passe = mot_passe;
-    }
-    public Administrateur(){
-
     }
 
     public Long getId() {

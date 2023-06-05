@@ -1,10 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Title -->
+    <title>Artesanos Cosco</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-$END$
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+        <!-- Logo -->
+        <a href="#" class="logo">Arte<span>sanos</span></a>
+        <!-- Login Btn -->
+        <a href="#" class="login">Login</a>
+        </div>
+
+    </header>
+    <!-- Home -->
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">ArtesanosCosco</h2>
+            <span class="home-subtitle">Le meilleur Artisana</span>
+        </div>
+    </section>
+    <!-- Blog-container -->
+    <div class="blog-container">
+
+        <!-- box-1 -->
+        <div class="blog-box">
+            <!-- image -->
+            <div class="blog-img">
+                <img class="images/image1.jpg" alt="Blog"></img>
+            </div>
+
+            <!-- text -->
+            <div class="blog-text">
+                <span> 19 JUIN / Web Design</span>
+                <a href="#" class="blog-title">Ceramique peruvienne</a>
+                <p>Découvrez plus d'informations sur les poteries du Pérou... Chulucanas est un village de potiers au Nord du Pérou</p>
+                <a href="#"> Description</a>
+            </div>
+        </div>
+        <!-- box-2 -->
+        <div class="blog-box">
+            <!-- image -->
+            <div class="blog-img">
+                <img class="images/image2.jpg" alt="Blog"></img>
+            </div>
+
+            <!-- text -->
+            <div class="blog-text">
+                <span> 19 JUIN / Web Design</span>
+                <a href="#" class="blog-title">Ceramique peruvienne</a>
+                <p>Découvrez plus d'informations sur les poteries du Pérou... Chulucanas est un village de potiers au Nord du Pérou</p>
+                <a href="#"> Description</a>
+            </div>
+        </div>
+        <!-- box-3 -->
+        <div class="blog-box">
+            <!-- image -->
+            <div class="blog-img">
+                <img class="images/image3.jpg" alt="Blog"></img>
+            </div>
+
+            <!-- text -->
+            <div class="blog-text">
+                <span> 19 JUIN / Web Design</span>
+                <a href="#" class="blog-title">Ceramique peruvienne</a>
+                <p>Découvrez plus d'informations sur les poteries du Pérou... Chulucanas est un village de potiers au Nord du Pérou</p>
+                <a href="#"> Description</a>
+            </div>
+        </div>
+
+
+
+    <!-- Link to JS -->
+    <script src="js/main.js"></script>
+
 </body>
 </html>

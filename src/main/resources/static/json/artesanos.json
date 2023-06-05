@@ -1,0 +1,20 @@
+[
+  {
+    "nom": "Produit 1",
+    "description": "Mon super produit",
+    "image": "https://fastly.picsum.photos/id/695/200/200.jpg?hmac=UJ4cowzXuCCU8226Q4uRM-Ahz6mj365L6nkT1QEBgR0",
+    "prix": 7
+  },
+  {
+    "nom": "Produit 2",
+    "description": "Mon super produit 2",
+    "image": "https://fastly.picsum.photos/id/120/200/200.jpg?hmac=iqJko6IlBQjHPwKm31fa-KtEGqwtJfXohpfL0Y41EtQ",
+    "prix": 9
+  },
+  {
+    "nom": "Produit 3",
+    "description": "Mon super produit 3",
+    "image": "https://fastly.picsum.photos/id/679/200/200.jpg?hmac=sPsw4YJPQkWFqo2k5UycejGhY4UXvaDXStGmvJEhFBA",
+    "prix": 18
+  }
+]
