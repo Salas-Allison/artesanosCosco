@@ -36,15 +36,24 @@
         <!-- box-1 -->
         <div class="blog-box">
             <!-- image -->
-            <div th:each="produit : ${produits}" class="card">
-                <img class="card-img-top" th:src="${image}" alt="Image du produit">
-                <div class="card-body">
-                    <h5 class="card-title" th:text="${nom}">Nom du produit</h5>
-                    <p class="card-text" th:text="${description}">Description du produit</p>
-                    <p class="card-text" th:text="'Prix : ' + ${prix}">Prix du produit</p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-                </div>
+            <div class="blog-img">
+                <img class="images/image1.jpg" alt="Blog"></img>
+                <tr th:each="produit : ${produits}" th:object="${produit}">
+                    <td th:text="*{nom}">n.a.</td>
+                    <td th:text="*{description}">n.a.</td>
+                    <td th:text="*{prix}">n.a.</td>
+                    <td><img th:src="*{image}" /></td>
+                </tr>
             </div>
+
+            <!-- text -->
+            <div class="blog-text">
+                <span> 19 JUIN / Web Design</span>
+                <a href="#" class="blog-title">Ceramique peruvienne</a>
+                <p>Découvrez plus d'informations sur les poteries du Pérou... Chulucanas est un village de potiers au Nord du Pérou</p>
+                <a href="#"> Description</a>
+            </div>
+        </div>
         <!-- box-2 -->
         <div class="blog-box">
             <!-- image -->
@@ -75,22 +84,7 @@
                 <a href="#"> Description</a>
             </div>
         </div>
-            <!-- footer -->
-            <footer class="footer-distributed">
-                <div class="blog-center">
-                    <div>
-                        <i class=" fa fa-map-maker"</i>
-                        <p><span> 17 rue Les Incas</span>
-                        Cuzco - Perou</p>
-                    </div>
-                    <div>
-                        <i class=" fa fa-phone"></i>
-                        <p> +51 01.02.03.04.05</p>
-                    </div>
-                    <div>
-                        <i class=" fa fa-envelope"></i>
-                        <p> <a href=#>info@contact.com</a></p>
-                    </div>
+
 
 
     <!-- Link to JS -->

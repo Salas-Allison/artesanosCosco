@@ -26,8 +26,7 @@ public class WebController {
 
     @GetMapping(path="/")
     public String index(Model model) {
-        Sort.Order o = Sort.Order.desc("prix");
-        Collection<Produit> produits = produitDao.findAll(Sort.by(o));
+        Collection<Produit> produits = produitDao.findAll();
 
         model.addAttribute("produits", produits);
 
