@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Title -->
+    <title>Artesanos Cosco</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+<!-- Header -->
+<header>
+    <!-- Nav -->
+    <div class="nav container">
+        <!-- Logo -->
+        <a href="/" class="logo">Arte<span>sanos</span></a>
+        <!-- Login Btn -->
+        <a href="#" class="login">Login</a>
+    </div>
+
+</header>
+<!-- Home -->
+<section class="home" id="home">
+    <div class="home-text container">
+        <h2 class="home-title">ArtesanosCosco</h2>
+        <span class="home-subtitle">Le meilleur Artisana</span>
+    </div>
+</section>
+<!-- Blog-container -->
+<div class="blog-container">
+
+    <div th:object="${produit}">
+        <div class="blog-box">
+            <div class="blog-img">
+                <img th:src="*{image}" alt="Blog"/>
+            </div>
+            <div class="blog-text">
+                <span th:text="*{nom}">n.a.</span>
+                <span th:text="*{description}">n.a.</span>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Link to JS -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
