@@ -1,20 +1,20 @@
 [
   {
-    "nom": "Produit 1",
-    "description": "Mon super produit",
-    "image": "/images/image4",
+    "nom": "Assiette",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "image": "/images/image1",
     "prix": 7
   },
   {
-    "nom": "Produit 2",
-    "description": "Mon super produit 2",
-    "image": "/images/image7",
+    "nom": "Echarpe",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "image": "/images/image2",
     "prix": 9
   },
   {
-    "nom": "Produit 3",
-    "description": "Mon super produit 3",
+    "nom": "Marmite",
+    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "image": "/images/image3",
-    "prix": 18
+    "prix": 22
   }
 ]
