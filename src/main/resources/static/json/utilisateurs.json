@@ -1,9 +1,0 @@
-[
-  {
-    "nom": "Alibaba",
-    "prenom": "Mon super produit",
-    "email": "email",
-    "username":"admin",
-    "mot_passe":"{bcrypt}$2a$10$1VeFJ6PoPyrfI.pqxdaIJeFaZFpuueDsILcSbrJg8x8iHaKXOObES"
-  }
-]
