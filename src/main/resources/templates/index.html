@@ -41,6 +41,23 @@
                 <div class="blog-text">
                     <span th:text="*{nom}">n.a.</span>
                     <a th:href="@{/description/{id}(id=*{id})}" class="btn">Description</a>
+
+
+                    <span class="middle-align" sec:authorize="isAuthenticated()">
+                    Admin : &nbsp;<span sec:authentication="name">Bob</span>
+                    <span sec:authentication="principal.authorities">[ROLE_USER]</span>
+                    <th:block sec:authorize="hasRole('ADMIN')">
+        &nbsp;             |&nbsp;
+                    <a th:href="@{/admin/listProduit}">Lister les produits</a>
+        &nbsp;              |&nbsp;
+                    <a th:href="@{/admin/createProduit}">Ajouter un produit</a>
+                    </th:block>
+         &nbsp;             | &nbsp;
+                    <a th:href="@{/admin/supprimerProduit}">Supprimer un produit</a>
+         &nbsp;             | &nbsp;
+                    <a th:href="@{/logout}">Se déconnecter</a>
+                    </span>
+
                 </div>
             </div>
         </div>

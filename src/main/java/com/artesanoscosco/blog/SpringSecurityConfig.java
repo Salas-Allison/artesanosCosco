@@ -42,7 +42,7 @@ public class SpringSecurityConfig {
                 .requestMatchers(HttpMethod.DELETE).authenticated()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
-                .and().formLogin().loginPage("/login").permitAll()
+                .and().formLogin().permitAll()
                 .and().build();
 
     }
