@@ -21,7 +21,6 @@
         <!-- Login Btn -->
         <span sec:authorize="isAuthenticated()">
                  <a class="login" th:href="@{/logout}">logout</a>
-
             </span>
         <form action="/login" method="POST">
 
@@ -29,6 +28,7 @@
                 <input type="submit" class="login" value="Login">
             </span>
 
+        </form>
     </div>
 
 </header>
@@ -42,33 +42,25 @@
 <!-- Blog-container -->
 <!-- Blog-container -->
 <div class="blog-container">
-    <div th:each="produit : ${produits}" th:object="${produit}">
-        <div class="blog-box">
-            <div class="blog-img">
-                <img th:src="*{image}" alt="Blog"/>
-            </div>
-            <div class="blog-text">
-                <span th:text="*{nom}">n.a.</span>
-                <a th:href="@{/description/{id}(id=*{id})}" class="btn">Description</a>
-
-                <span class="middle-align" sec:authorize="isAuthenticated()">
-                    Admin : &nbsp;<span sec:authentication="name">Bob</span>
-                    <span sec:authentication="principal.authorities">[ROLE_USER]</span>
-                    <th:block sec:authorize="hasRole('ADMIN')">
-        &nbsp;             |&nbsp;
-                    <a th:href="@{/admin/viewProduit/{id}(id=*{id})}">Editar un produit</a>
-        &nbsp;              |&nbsp;
-                    <a th:href="@{/admin/createProduit}">Ajouter un produit</a>
-                    </th:block>
-         &nbsp;             | &nbsp;
-                    <a th:href="@{/admin/deleteProduit/{id}(id=*{id})}">Supprimer un produit</a>
-         &nbsp;             | &nbsp;
-                    <a th:href="@{/logout}">Se déconnecter</a>
-                    </span>
-
-            </div>
+    <div class="container">
+        <div class="row">
+            <h1>Editar un produit</h1>
+            <!--@{/admin/viewProduit/{id}(id=*{id})}-->
+            <form th:action="@{/admin/updateProduit/{id}(id=${produit.id})}" th:object="${produit}" method="post">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" th:field="*{description}" required><br><br>
+                <label for="image">url:</label>
+                <input type="text" id="image" name="image" th:field="*{image}" required><br><br>
+                <label for="nom">nom:</label>
+                <input type="text" id="nom" name="nom" th:field="*{nom}" required><br><br>
+                <label for="prix">Prix:</label>
+                <input type="number" id="prix" name="prix"  th:field="*{prix}" required><br><br>
+                <button class="btn btn-success" >Save</button>
+            </form>
         </div>
+
     </div>
+
 </div>
 
 

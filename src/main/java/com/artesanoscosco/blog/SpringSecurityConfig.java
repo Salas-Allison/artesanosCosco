@@ -32,7 +32,9 @@ public class SpringSecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http)
+            throws Exception {
+
         return http
                 .csrf().disable() // Pour l'instant on désactive la protection CSRF
                 .authorizeHttpRequests()
@@ -42,8 +44,14 @@ public class SpringSecurityConfig {
                 .requestMatchers(HttpMethod.DELETE).authenticated()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
+
+
                 .and().formLogin().permitAll()
+                //  .and().logout().logoutUrl("/")
                 .and().build();
 
+
+
     }
+
 }

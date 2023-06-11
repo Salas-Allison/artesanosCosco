@@ -6,23 +6,19 @@ import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.URL;
 
 @Entity
+@Table(name = "produit")
 public class Produit
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-
-    @NotNull
-    @NotBlank
+    @Column(name = "nom",nullable = true,length = 50)
     private String nom;
-
-    @NotNull
-    @NotBlank
+    @Column(name = "description",nullable = true,length = 255)
     private String description;
-
-    @URL
+    @Column(name = "image",nullable = true,length = 255)
     private String image;
-
+    @Column(name = "prix",nullable = true,length = 255)
     private double prix;
 
     public Produit(){

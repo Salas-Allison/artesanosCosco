@@ -16,9 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 import java.net.URI;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
+
 
 @SpringBootTest
 class ArtesanosApplicationTests {
