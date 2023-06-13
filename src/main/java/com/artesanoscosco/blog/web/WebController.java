@@ -43,7 +43,7 @@ public class WebController {
     public String createProduit(Model model) {
         Produit produit = new Produit();
         model.addAttribute("produit", produit);
-        return "admin/createProduit"; //html
+        return "admin/createProduct"; //html
     }
 
     // post for create product save post data
@@ -63,8 +63,7 @@ public class WebController {
     }
     @PostMapping("/admin/updateProduit/{id}")
     public String updateProduitEdit(@PathVariable Long id,
-                                    @ModelAttribute("produit") Produit produit,
-                                    Model model){
+                                    @ModelAttribute("produit") Produit produit){
         Produit produitExist=produitService.produitID(id);
         produitExist.setId(id);
         produitExist.setDescription(produit.getDescription());
