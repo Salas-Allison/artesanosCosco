@@ -45,13 +45,9 @@ public class SpringSecurityConfig {
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.GET, "/**").permitAll()
 
-
                 .and().formLogin().permitAll()
-                //  .and().logout().logoutUrl("/")
+                // .and().logout().logoutUrl("/")
                 .and().build();
-
-
-
     }
 
 }

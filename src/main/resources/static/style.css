@@ -63,8 +63,12 @@ body{
     font-size: 50px;
 
 }
-
-
+.card h-100{
+    width: 50%;
+}
+.footer{
+    margin-top: 50px;
+}
 
 
 /* ***** Responsive css ***** */
@@ -81,7 +85,6 @@ body{
     .img-area img{
         width: 100%;
     }
-
 }
 
 @media only screen and (max-width: 767px){
@@ -101,9 +104,5 @@ body{
         width: 100%;
         line-height: 1.6;
         font-size: 12px;
-
-    }
-    card mb-3{
-        position: center;
     }
 }

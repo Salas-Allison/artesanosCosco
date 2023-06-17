@@ -44,24 +44,24 @@ function refreshAllProduit(event) {
 }
 
 /**
- * Ajoute un nouveau sondage dans la liste sans devoir tout recharger.
+ * Ajoute un nouveau produit dans la liste sans devoir tout recharger.
  * @param {Produit} produit
  */
 function updateListWith(produit) {
     console.log("Mise à jour de la page avec le nouveau produit : ");
     console.log(produit);
 
-    fetch(BASEURL_FRAGMENT_SONDAGES + '/' + sondage.id)
+    fetch(BASEURL_FRAGMENT_SONDAGES + '/' + produit.id)
         .then(response => response.text())
         .then(text => {
-            const div = document.getElementById(DIV_SONDAGES);
+            const div = document.getElementById(DIV_PRODUITS);
             let documentFragment = document.createRange().createContextualFragment(text);
             div.prepend(documentFragment.firstChild);
         });
 }
 
 /**
- * Envoie les données du sondage vers l'URL "/api/sondages" avec méthode POST.
+ * Envoie les données du produit vers l'URL "/api/produit" avec méthode POST.
  *
  * @param {Event} event L'évènement de click.
  */
@@ -73,14 +73,14 @@ function createNewPolling(event) {
     event.preventDefault();
 
     // On transforme les champs du formulaire au format JSON
-    let form = document.getElementById(FORM_CREATE_SONDAGE);
+    let form = document.getElementById(FORM_CREATE_PRODUIT);
     let formData = new FormData(form);
     let json = JSON.stringify(Object.fromEntries(formData.entries()));
 
     console.debug("Sending data to server : \n" + json);
 
     // Envoi des données au WebService
-    fetch(BASEURL_WEBSERVICE_SONDAGES, {
+    fetch(BASEURL_WEBSERVICE_PRODUITS, {
         method: 'POST',
         body: json,
         headers: {
@@ -89,11 +89,11 @@ function createNewPolling(event) {
     }).then(response => {
         if (response.ok) {
             // La requête s'est bien passée
-            console.log("Sondage créé avec succès !");
-            response.json().then(sondage => updateListWith(sondage));
+            console.log("Produit créé avec succès !");
+            response.json().then(produit => updateListWith(produit));
         } else {
             // La requête a échoué
-            console.error("Erreur lors de la création du sondage !");
+            console.error("Erreur lors de la création d'un produit !");
             response.json().then(err => console.error(err));
         }
     }).catch(error => {

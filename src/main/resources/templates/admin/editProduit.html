@@ -84,7 +84,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <h1>Modifier un produit</h1>
-                <form action="/admin/updateProduit" th:object="${produit}" method="post">
+                <form th:action="@{/admin/updateProduit/{id}(id=${produit.id})}" th:object="${produit}" method="post">
                     <div class="mb-3">
                         <label for="nom" class="form-label">Nom:</label>
                         <input type="text" class="form-control" id="nom" th:field="*{nom}" aria-describedby="emailHelp">
@@ -102,7 +102,7 @@
                         <input type="number" step="0.1" class="form-control" id="prix" th:field="*{prix}" aria-describedby="emailHelp">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <button type="submit" class="btn btn-warning">Enregistrer</button>
                 </form>
             </div>
 

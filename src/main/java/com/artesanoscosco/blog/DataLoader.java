@@ -38,6 +38,5 @@ public class DataLoader implements ApplicationRunner
             });
             mproduitRepository.saveAll(produits);
         }
-
     }
 }

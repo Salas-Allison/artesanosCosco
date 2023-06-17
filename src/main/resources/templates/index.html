@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
 </head>
 <body>
+<!-- Header section -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#"><span class="text-warning">Arte</span>Sanos</a>
@@ -45,7 +46,7 @@
         </div>
     </div>
 </nav>
-
+<!-- Carousel section pour la presentation -->
 <div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -96,7 +97,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Card pour chaque produit -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <th:block th:each="produit : ${produits}" th:object="${produit}">
                 <div class="col">
@@ -105,13 +106,14 @@
                         <img th:src="*{image}" class="card-img-top" alt="Blog"/>
                         <div class="card-body">
                             <h5 th:text="*{nom}">n.a</h5>
-                            <p class="card-text">This is a longer card a little bit longer.</p>
+                            <p class="card-text">Produit artisanal.</p>
                             <a th:href="@{/description/{id}(id=*{id})}" class="btn bg-warning text-dark">Description</a>
                             <span class="middle-align" sec:authorize="hasRole('ADMIN')">
         &nbsp;
-                                <a th:href="@{/admin/viewProduit/{id}(id=*{id})}" class="btn">Editer</a>
-        &nbsp;                         |&nbsp;
-                                <a th:href="@{/admin/deleteProduit/{id}(id=*{id})}" class="btn">Supprimer</a>
+                                <a th:href="@{/admin/viewProduit/{id}(id=*{id})}" class="btn bg-warning text-dark">Editer</a>
+        &nbsp;
+                                <a th:href="@{/admin/deleteProduit/{id}(id=*{id})}" class="btn bg-warning text-dark" onclick="return confirm('Estás seguro que deseas eliminar el registro?');">Supprimer</a>
+
 
                                 </span>
                         </div>
@@ -122,18 +124,20 @@
 
 </section>
 
-<div class="btn">
-                <span class="d-grid gap-2 col-6 mx-auto" sec:authorize="hasRole('ADMIN')">
-                     <a th:href="@{/admin/createProduit}" class="btn" type="button">Ajouter un produit</a>
-                </span>
-</div>
+</section>
 
+    <span class="middle-align" sec:authorize="hasRole('ADMIN')">
+        &nbsp;<div class="d-grid gap-2 col-6 mx-auto">
+        <a th:href="@{/admin/createProduit}" class="btn bg-warning text-dark">Ajouter</a>
+        </div>
+    </span>
 <!-- Footer -->
-<footer class="card">
+<footer class="footer">
     <div class="card-body">
         <h5 class="card-title">Contactez-nous</h5>
-        <p class="card-text">This is a wider cartional content. This content is a little bit longer.</p>
-        <p class="card-text">This is a wider cartional content. This content is a little bit longer.</p>
+        <p class="card-text">17 rue les Incas</p>
+        <p class="card-text">Cuzco - Perou</p>
+        <p class="card-text">+54 - 09.87.65.43.21</p>
     </div>
     <img src="images/map.jpg" class="card-img-bottom" alt="...">
 </footer>
